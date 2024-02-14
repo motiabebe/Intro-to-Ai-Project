@@ -19,23 +19,23 @@ window = tk.Tk()
 window.title("Hide and Seek Game")
 
 # Set window size and disable resizing
-window.geometry("600x400")  # adjust as needed
+window.geometry("1280x720")
 window.resizable(False, False)
 
 # Load images
-box_image = tk.PhotoImage(file="box.png")  # replace with your image file
-found_image = tk.PhotoImage(file="found.png")  # replace with your image file
-empty_image = tk.PhotoImage(file="empty.png")  # replace with your image file
+box_image = tk.PhotoImage(file="box.png")  
+found_image = tk.PhotoImage(file="found.png")  
+empty_image = tk.PhotoImage(file="empty.png")  
 
 # Create a label to display the game status
 status_label = tk.Label(window, text=f"You have {NUM_GUESSES} guesses to find all the hidden items!", font=('Helvetica', 14))
-status_label.grid(row=0, column=0, columnspan=NUM_BOXES//2, pady=10)
+status_label.grid(row=0, column=0, columnspan=2, padx=5, pady=5)
 
 # Create buttons for each box
 buttons = []
 for i in range(NUM_BOXES):
     button = tk.Button(window, image=box_image, command=lambda i=i: check_box(i))
-    button.grid(row=(i//2)+1, column=i%2, padx=5, pady=5)
+    button.grid(row=i//2+1, column=i%2, padx=5, pady=5)
     buttons.append(button)
 
 # Counter for guesses
