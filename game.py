@@ -41,7 +41,24 @@ for i in range(NUM_BOXES):
 # Counter for guesses
 guesses = NUM_GUESSES
 
-# Function to handle button clicks
+
+# At the start of the function, the guesses counter is decremented by 1, 
+#  that the player has used one guess.
+
+# The function then checks if the box at index i contains an item 
+# (i.e., if boxes[i] is 1). If it does, the function updates the corresponding 
+# button to display the found_image and disables it to prevent further interaction. 
+# It also sets boxes[i] to 0 to indicate that the item has been found. 
+# If all items have been found (i.e., if the sum of boxes is 0), 
+# it updates the status_label to congratulate the player.
+
+# If the box does not contain an item, the function updates the button to 
+# display the empty_image and disables it.
+
+# Finally, if the player has used all their guesses and there are still items 
+# left to find (i.e., if guesses is 0 and the sum of boxes is greater than 0), 
+# the function disables all the buttons and updates the status_label to indicate 
+# that the game is over and the player did not find all the items.
 def check_box(i):
     global guesses
     guesses -= 1
