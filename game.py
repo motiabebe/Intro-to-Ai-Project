@@ -23,9 +23,9 @@ window.geometry("1280x720")
 window.resizable(False, False)
 
 # Load images
-box_image = tk.PhotoImage(file="box.png")  
-found_image = tk.PhotoImage(file="found.png")  
-empty_image = tk.PhotoImage(file="empty.png")  
+box_image = tk.PhotoImage(file="assets/box.png")  
+found_image = tk.PhotoImage(file="assets/found.png")  
+empty_image = tk.PhotoImage(file="assets/empty.png")  
 
 # Create a label to display the game status
 status_label = tk.Label(window, text=f"You have {NUM_GUESSES} guesses to find all the hidden items!", font=('Helvetica', 14))
